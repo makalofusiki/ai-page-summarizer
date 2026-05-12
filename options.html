@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Page Summarizer - 设置</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+        'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: #f7f8fa;
+      color: #1d1d1f;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      padding: 48px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: #fff;
+      color: #1d1d1f;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: #2563eb;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    #saveStatus {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .status-success {
+      color: #16a34a;
+    }
+
+    .status-error {
+      color: #dc2626;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Page Summarizer 设置</h1>
+
+    <div class="form-group">
+      <label for="provider">AI 提供商</label>
+      <select id="provider">
+        <option value="openai">OpenAI</option>
+        <option value="claude">Claude</option>
+        <option value="deepseek">DeepSeek</option>
+        <option value="builtin">Chrome 内置 AI（免费，无需 API Key）</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="apiKeyGroup">
+      <label for="apiKey">API Key</label>
+      <input type="password" id="apiKey" placeholder="请输入你的 API Key" />
+    </div>
+
+    <button id="saveBtn" class="btn">保存</button>
+    <div id="saveStatus" class="hidden"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

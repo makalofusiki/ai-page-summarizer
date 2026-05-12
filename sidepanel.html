@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="sidepanel.css" />
+  <title>AI Page Summarizer</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">
+        <div class="logo-icon">&#9889;</div>
+        <h1>AI Page Summarizer</h1>
+      </div>
+    </header>
+
+    <main>
+      <button id="summarizeBtn" class="btn-primary">
+        <span class="btn-icon">&#9889;</span>
+        总结当前页面
+      </button>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p class="loading-text">正在分析页面内容...</p>
+      </div>
+
+      <div id="result" class="result hidden">
+        <div id="pageMeta" class="page-meta">
+          <div id="pageTitle" class="page-title"></div>
+          <div id="pageUrl" class="page-url"></div>
+        </div>
+        <div class="divider"></div>
+        <div id="summaryContent" class="summary-content"></div>
+      </div>
+
+      <div id="empty" class="empty">
+        <div class="empty-icon">&#9889;</div>
+        <p class="empty-text">点击上方按钮，开始总结当前页面</p>
+      </div>
+
+      <div id="error" class="error hidden">
+        <div class="error-icon">&#9888;</div>
+        <span id="errorMessage"></span>
+      </div>
+    </main>
+
+    <footer>
+      <button id="copyBtn" class="btn-secondary" disabled>
+        <span class="btn-icon-sm">&#128203;</span>
+        复制摘要
+      </button>
+    </footer>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
