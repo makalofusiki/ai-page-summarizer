@@ -39,6 +39,45 @@ git clone https://github.com/makalofusiki/ai-page-summarizer.git
 
 > Chrome 内置 AI 需要 Chrome ≥ 128，并在 `chrome://flags/#summarization-api-for-gemini` 中启用。
 
+## AI 提供商说明
+
+### OpenAI
+
+- **端点**: `https://api.openai.com/v1/chat/completions`
+- **模型**: `gpt-4o-mini`
+- **API Key**: 在 [platform.openai.com/api-keys](https://platform.openai.com/api-keys) 获取
+- **计费**: 按 token 计费，gpt-4o-mini 价格较低
+
+### Claude
+
+- **端点**: `https://api.anthropic.com/v1/messages`
+- **模型**: `claude-sonnet-4-20250514`
+- **API Key**: 在 [console.anthropic.com](https://console.anthropic.com) 获取
+- **计费**: 按 token 计费
+
+### DeepSeek
+
+- **端点**: `https://api.deepseek.com/v1/chat/completions`
+- **模型**: `deepseek-chat`
+- **API Key**: 在 [platform.deepseek.com/api-keys](https://platform.deepseek.com/api-keys) 获取
+- **计费**: 价格极低（约 OpenAI 的 1/10），适合高频使用
+- **兼容性**: API 格式与 OpenAI 完全兼容，响应速度快
+
+### Chrome 内置 AI（实验性）
+
+- **无需 API Key**，完全免费，本地运行
+- 利用 Chrome 内置的 Gemini 模型进行摘要
+- **启用方法**:
+  1. 确保 Chrome 版本 ≥ 128
+  2. 在地址栏打开 `chrome://flags/#summarization-api-for-gemini`
+  3. 设置为 **Enabled**
+  4. 重启浏览器
+  5. 首次使用时浏览器会自动下载 AI 模型
+- **限制**:
+  - 依赖 Chrome 版本和平台支持
+  - 首次使用需要下载模型
+  - 摘要长度和格式由内置 API 控制，不支持自定义提示词
+
 ## 使用
 
 1. 打开任意网页
